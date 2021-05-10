@@ -164,7 +164,7 @@ sprites.onOverlap(SpriteKind.Boss_Projectile, SpriteKind.Player, function (sprit
 })
 statusbars.onZero(StatusBarKind.EnemyHealth, function (status) {
     if (Big_Bad_Boss_Images.length == 0) {
-        info.setScore(100 - game.runtime() / 1000)
+        info.setScore(100 - game.runtime() / 1000 + info.life())
         game.over(true, effects.confetti)
     } else {
         Boss.destroy()
