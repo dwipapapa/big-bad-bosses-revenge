@@ -3,7 +3,7 @@ namespace SpriteKind {
     export const Boss_Projectile = SpriteKind.create()
 }
 function make_big_bad_boss () {
-    Big_Bad_boss_health = 250
+    Big_Bad_boss_health = 100
     Boss = sprites.create(Big_Bad_Boss_Images.shift(), SpriteKind.Big_Bad_Boss)
     Boss.right = 160
     Boss.y = 60
@@ -164,10 +164,13 @@ sprites.onOverlap(SpriteKind.Boss_Projectile, SpriteKind.Player, function (sprit
 })
 statusbars.onZero(StatusBarKind.EnemyHealth, function (status) {
     if (Big_Bad_Boss_Images.length == 0) {
+        info.setScore(100 - game.runtime() / 1000)
         game.over(true, effects.confetti)
     } else {
         Boss.destroy()
-        make_big_bad_boss()
+        timer.after(1000, function () {
+            make_big_bad_boss()
+        })
     }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
