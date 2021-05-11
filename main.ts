@@ -322,12 +322,6 @@ function boss_Attack () {
             projectile2.setKind(SpriteKind.Boss_Projectile)
             projectile2.y += randint(-16, 16)
         }
-        animation.runMovementAnimation(
-        Boss,
-        animation.animationPresets(animation.bobbing),
-        1000,
-        false
-        )
     } else if (Boss.image.equals(img`
         . . . . . . . c c . . . . . . . 
         . . . . . . c 7 c . . . . . . . 
