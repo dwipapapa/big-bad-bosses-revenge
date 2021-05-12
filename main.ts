@@ -356,6 +356,26 @@ function boss_Attack () {
 scene.onOverlapTile(SpriteKind.Big_Bad_Boss, assets.tile`myTile1`, function (sprite, location) {
     sprite.vy = 25
     boss_Attack()
+    if (Boss.image.equals(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . 7 . . . 7 . . . . . 
+        . . . . . . 7 7 . 7 7 . . . . . 
+        . . . . . . 7 7 7 7 7 . . . . . 
+        . . . . . . 7 2 7 2 7 . . . . . 
+        . . . . . . 7 7 7 7 7 . . . . . 
+        . . . . . . 7 f f f 7 . . . . . 
+        . . . . . . . 7 7 7 . . . . . . 
+        . . . . . . 7 . 7 . 7 . . . . . 
+        . . . . . 7 . . 7 . . 7 . . . . 
+        . . . . 7 . . . 7 . . . 7 . . . 
+        . . . . . . . . 7 . . . . . . . 
+        . . . . . . . . 7 . . . . . . . 
+        . . . . . . . . 7 . . . . . . . 
+        . . . . . . . 7 . 7 . . . . . . 
+        . . . . . . 7 . . . 7 . . . . . 
+        `)) {
+        sprite.vy = 50
+    }
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Big_Bad_Boss, function (sprite, otherSprite) {
     sprite.destroy()
